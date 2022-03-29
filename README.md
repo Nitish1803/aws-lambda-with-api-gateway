@@ -23,6 +23,15 @@ Simple AWS Lambda with API Gateway deployed using AWS SAM (Serverless Applicatio
 - After successfull deployment, send requests to the service using deployed `API Gateway`.
   The API also supports a queryParameter `timezone` if user wants to get time in a different timezone.
 
+## Local Usage
+- Install Docker (https://docs.docker.com/get-docker/)
+- After successful installation, run command `sam local start-api`
+
+  ![sam_local](./docs/images/sam_api_local.png?raw=true)
+
+- You will be able to hit the API Endpoint(s) locally from your localhost.
+  
+  ![localhost_api](./docs/images/getTime_local.png?raw=true)
 
 ## API Endpoint(s)
 
@@ -34,3 +43,7 @@ Simple AWS Lambda with API Gateway deployed using AWS SAM (Serverless Applicatio
  - GET with query parameter `timezone`
 
    ![getTime_with_param GET](./docs/images/getTime_with_param.png?raw=true)
+
+
+## References
+![Running API Gateway Locally](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-using-start-api.html)

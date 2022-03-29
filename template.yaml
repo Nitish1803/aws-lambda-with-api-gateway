@@ -1,0 +1,19 @@
+---
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Stack for aws-lambda-with-api-gateway-using-sam
+
+Resources:   
+  myLambdaFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: aws-lambda-with-api-gateway-using-sam
+      CodeUri: src/.
+      Handler: app.lambda_handler
+      Runtime: python3.7
+      Events:
+        myAPIEvent:
+          Type: Api
+          Properties:
+            Path: /getTime
+            Method: GET

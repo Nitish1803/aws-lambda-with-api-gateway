@@ -1,7 +1,8 @@
-import pytz
 import json
 import logging
 from datetime import datetime
+from dateutil import tz
+
 
 # Logging config
 logger = logging.getLogger()
@@ -16,14 +17,13 @@ def lambda_handler(event, context):
     logger.debug(f"CONTEXT: {vars(context)}")
 
     try:
-        default_tz = {'timezone': 'Europe/Berlin'}
         params = event.get('queryStringParameters')
-        if params is None:
-            params = default_tz
+        if not params:
+            params = {'timezone': 'Europe/Berlin'}
         logger.info(f"PARAMS: {params}")
 
-        UTC = pytz.utc
-        LOCAL = pytz.timezone(params['timezone'])
+        UTC = tz.tzutc()
+        LOCAL = tz.gettz(params.get('timezone'))
 
         response = {
             'statusCode': 200,
@@ -31,8 +31,8 @@ def lambda_handler(event, context):
                 'content-type': 'application/json'
             },
             'body': json.dumps({
-                'utc_time': datetime.now(UTC).strftime("%m/%d/%Y, %H:%M:%S"),
-                'local_time': datetime.now(LOCAL).strftime("%m/%d/%Y, %H:%M:%S")
+                'utc_time': datetime.now(tz=UTC).strftime("%m/%d/%Y, %H:%M:%S"),
+                'local_time': datetime.now(tz=LOCAL).strftime("%m/%d/%Y, %H:%M:%S")
             })
         }
     except Exception as e:

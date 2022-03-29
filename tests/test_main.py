@@ -57,7 +57,7 @@ class TestApp(unittest.TestCase):
 
     def test_error_response(self):
         test_event = deepcopy(REST_API_EVENT)
-        test_event['queryStringParameters'] = {'timezone': 'ABC'}
+        test_event['queryStringParameters'] = {'timezone': 1234}
         lambda_result = app.lambda_handler(test_event, self.context)
         logger.info(f"RESPONSE - {lambda_result}")
         assert lambda_result['statusCode'] == 503

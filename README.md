@@ -3,6 +3,7 @@
 ## Description
 
 Simple AWS Lambda with API Gateway deployed using AWS SAM (Serverless Application Model)
+
 ![FLOW_DIAGRAM GET](./docs/images/Flow_Diagram.png?raw=true)
 
 ## Installation

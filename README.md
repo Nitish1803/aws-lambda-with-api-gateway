@@ -46,4 +46,4 @@ Simple AWS Lambda with API Gateway deployed using AWS SAM (Serverless Applicatio
 
 
 ## References
-![Running API Gateway Locally](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-using-start-api.html)
+[Running API Gateway Locally](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-using-start-api.html)

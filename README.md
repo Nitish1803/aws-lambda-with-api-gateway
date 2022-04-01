@@ -16,7 +16,7 @@ Simple AWS Lambda with API Gateway deployed using AWS SAM (Serverless Applicatio
 
 - Run `run.py` to deploy the service to AWS Cloud.
 
-- Check in `Cloudformation` is the stack is deployed or not.
+- Check in `Cloudformation` if the stack is deployed or not.
 
   ![CFN GET](./docs/images/CFN.png?raw=true)
 
